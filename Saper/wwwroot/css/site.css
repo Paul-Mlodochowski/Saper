@@ -16,3 +16,20 @@ html {
 body {
   margin-bottom: 60px;
 }
+.SaperBoard {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap
+}
+.Tile {
+
+    width: 30px;
+    text-align: center;
+}
+.Tile a{
+    width:100%;
+    text-decoration:none;
+    
+    color:black;
+}

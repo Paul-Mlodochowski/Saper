@@ -16,6 +16,7 @@
             return _gameBoard.GetSize();
         }
         public override void SetBombsToBoard() {
+            _gameBoard.Board = Board; // To pass right size board
             _gameBoard.SetBombsToBoard();
         }
     }

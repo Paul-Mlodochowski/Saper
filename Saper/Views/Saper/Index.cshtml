@@ -1,13 +1,22 @@
 ﻿@using Saper.Models.SaperLogic
 @model AbstractGameBoard
 @{
-	ViewData["Title"] = "Zagraj w sapera!";
+    ViewData["Title"] = "Zagraj w sapera!";
+
 }
 
 <h1>Saper Plansza Small</h1>
-<div>
-	@foreach (var item in Model.Board)
-	{
-	<div class="Tile">.</div>
+<div class="SaperBoard">
+    @for (int x =0; x < Math.Sqrt(Model.GetSize());x++)
+    {
+		@for(int y =0; y < Math.Sqrt(Model.GetSize());y++){
+			<div  class="Tile">
+				<a asp-action="Check" asp-route-x="@x" asp-route-y="@y" class="Tile" >
+				@Model.Board[x,y]
+				</a>
+			</div>
+		}
 	}
+
 </div>
+

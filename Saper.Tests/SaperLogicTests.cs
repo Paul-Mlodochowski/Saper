@@ -28,10 +28,13 @@ namespace Saper.Models.SaperLogic
             new MediumSizeDecorator(_gameBoard),
             //new LargeSizeDecorator(_gameBoard)
             };
-     
 
+            
             Assert.Equal((_gameBoard = list.ElementAt(0)).GetSize(), 100);
+            _gameBoard.SetBombsToBoard();
             Assert.Equal((_gameBoard = list.ElementAt(1)).GetSize(), 400);
+           
+           
 
         }
     }
