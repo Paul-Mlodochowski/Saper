@@ -1,12 +1,19 @@
 ﻿using System;
-
+using System.Collections.Generic;
 namespace Saper.Models.SaperLogic
 {
     public class GameBoard : AbstractGameBoard
     {
         // BOMBS are represents as -1
         public override int[,] Board { get; set; }
+        private int[,] xyClicks = new int[10,10];
         
+        
+        public override int[,] ClickedXY() {
+            return xyClicks;
+        }
+        
+
         public override int GetBoardTile(int a, int b) {
             return 0;
         }

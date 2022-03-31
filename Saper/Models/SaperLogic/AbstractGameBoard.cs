@@ -8,6 +8,7 @@
         public abstract int GetSize();
         public abstract void SetBombsToBoard();
 
+        public abstract int[,] ClickedXY();
 
     }
 }

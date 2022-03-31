@@ -10,11 +10,18 @@
     @for (int x =0; x < Math.Sqrt(Model.GetSize());x++)
     {
 		@for(int y =0; y < Math.Sqrt(Model.GetSize());y++){
+			@if(@Model.ClickedXY()[x,y] == 1) {
+			<div  class="ShowTitle">
+				@Model.Board[x,y]
+			</div>
+			}
+			else{
 			<div  class="Tile">
 				<a asp-action="Check" asp-route-x="@x" asp-route-y="@y" class="Tile" >
-				@Model.Board[x,y]
+				
 				</a>
 			</div>
+			}
 		}
 	}
 

@@ -19,5 +19,9 @@
             _gameBoard.Board = Board; // To pass right size board
             _gameBoard.SetBombsToBoard();
         }
+        public override int[,] ClickedXY() {
+            _gameBoard.Board = Board; // To pass right size board
+             return _gameBoard.ClickedXY();
+        }
     }
 }
