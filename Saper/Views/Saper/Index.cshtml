@@ -6,6 +6,9 @@
 }
 
 <h1>Saper Plansza Small</h1>
+@if (TempData["Failed"] != null) {
+	<h2 color = "red">@TempData["Failed"]</h2>
+}
 <div class="SaperBoard">
     @for (int x =0; x < Math.Sqrt(Model.GetSize());x++)
     {
@@ -26,4 +29,3 @@
 	}
 
 </div>
-
