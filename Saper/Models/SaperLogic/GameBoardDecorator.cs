@@ -1,4 +1,4 @@
-﻿namespace Saper.Domain.Saper.Tests
+﻿namespace Saper.Models.SaperLogic
 {
     public abstract class GameBoardDecorator : AbstractGameBoard
     {
@@ -15,6 +15,8 @@
             _gameBoard.Board = Board; // To pass right size board
             return _gameBoard.GetSize();
         }
-       
+        public override void SetBombsToBoard() {
+            _gameBoard.SetBombsToBoard();
+        }
     }
 }

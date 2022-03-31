@@ -2,7 +2,7 @@
 using System.Linq;
 using Xunit;
 
-namespace Saper.Domain.Saper.Tests
+namespace Saper.Models.SaperLogic
 {
     public class SaperLogicTests
     {

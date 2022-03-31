@@ -1,4 +1,4 @@
-﻿namespace Saper.Domain.Saper.Tests
+﻿namespace Saper.Models.SaperLogic
 {
     public abstract class AbstractGameBoard : IGameBoard
     {
@@ -6,6 +6,8 @@
         public abstract int GetBoardTile(int a, int b);
 
         public abstract int GetSize();
-        
+        public abstract void SetBombsToBoard();
+
+
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Saper.Domain.Saper.Tests
+﻿namespace Saper.Models.SaperLogic
 {
     public interface IGameBoard
     {

@@ -1,0 +1,13 @@
+﻿@using Saper.Models.SaperLogic
+@model AbstractGameBoard
+@{
+	ViewData["Title"] = "Zagraj w sapera!";
+}
+
+<h1>Saper Plansza Small</h1>
+<div>
+	@foreach (var item in Model.Board)
+	{
+	<div class="Tile">.</div>
+	}
+</div>

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saper", "Saper\Saper.csproj", "{4A7D3B36-A193-48E3-BE8A-95A7EC96ED32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saper.Tests", "Saper\Domain\Saper.Tests\Saper.Tests.csproj", "{6437CF3C-7DF9-4B5D-91D9-864DD1F6387A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saper.Tests", "Saper.Tests\Saper.Tests.csproj", "{2FEBAFA1-1BC8-4D1A-AB58-0609BA842C72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{4A7D3B36-A193-48E3-BE8A-95A7EC96ED32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A7D3B36-A193-48E3-BE8A-95A7EC96ED32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A7D3B36-A193-48E3-BE8A-95A7EC96ED32}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6437CF3C-7DF9-4B5D-91D9-864DD1F6387A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6437CF3C-7DF9-4B5D-91D9-864DD1F6387A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6437CF3C-7DF9-4B5D-91D9-864DD1F6387A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6437CF3C-7DF9-4B5D-91D9-864DD1F6387A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FEBAFA1-1BC8-4D1A-AB58-0609BA842C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FEBAFA1-1BC8-4D1A-AB58-0609BA842C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FEBAFA1-1BC8-4D1A-AB58-0609BA842C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FEBAFA1-1BC8-4D1A-AB58-0609BA842C72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
