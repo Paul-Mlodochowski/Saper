@@ -3,8 +3,10 @@ namespace Saper.Models.SaperLogic
 {
     public class MediumAmountOfBombsDecorator : GameBoardDecorator
     {
+        private const int NUMBEROFBOMBS = 30;
+
         public MediumAmountOfBombsDecorator(AbstractGameBoard gameBoard, int[,] Board) : base(gameBoard) {
-            this.Bombs = 30;
+            this.Bombs = NUMBEROFBOMBS;
             this.Board = Board;
             setBombs();
             setSize();

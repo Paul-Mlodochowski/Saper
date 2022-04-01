@@ -6,7 +6,7 @@ namespace Saper.Controllers
     public class SaperController : Controller {
         private static AbstractGameBoard? gameBoard;
         private static int? levelOfDificulty;
-       
+        
         public IActionResult IndexSmall(int? id) {
              if(id == null)
                 return View(gameBoard);

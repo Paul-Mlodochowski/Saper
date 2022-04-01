@@ -2,9 +2,11 @@
 {
     public class SmallSizeDecorator : GameBoardDecorator
     {
+        private const int SIZE = 10;
+
         public SmallSizeDecorator(AbstractGameBoard gameBoard) : base(gameBoard) {
-            this.Board = new int[10, 10];
-            this.xyClicks = new int[10, 10];
+            this.Board = new int[SIZE, SIZE];
+            this.xyClicks = new int[SIZE, SIZE];
             setSize();
         }
         public override int[,] Board { get; set; }
