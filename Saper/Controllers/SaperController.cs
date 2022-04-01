@@ -5,26 +5,41 @@ namespace Saper.Controllers
 {
     public class SaperController : Controller {
         private static AbstractGameBoard? gameBoard;
-
-        
-        public IActionResult IndexSmall() {
-            
-             if (gameBoard != null && gameBoard.GetSize() == 100)
+        private static int? levelOfDificulty;
+       
+        public IActionResult IndexSmall(int? id) {
+             if(id == null)
                 return View(gameBoard);
 
+            if ((gameBoard != null && gameBoard.GetSize() == 100) && (levelOfDificulty == id) && levelOfDificulty != null)
+                return View(gameBoard);
+
+            levelOfDificulty = id;
+           
             gameBoard = new GameBoard();
             gameBoard = new SmallSizeDecorator(gameBoard);
-            gameBoard = new SmallAmountOfBombsDecorator(gameBoard,gameBoard.Board);
+            if(id == 1)
+                gameBoard = new SmallAmountOfBombsDecorator(gameBoard,gameBoard.Board);
+            else if(id == 2)
+                gameBoard = new MediumAmountOfBombsDecorator(gameBoard, gameBoard.Board);
             gameBoard.SetBombsToBoard();
             return View(gameBoard);
         }
-        public IActionResult IndexMedium() {
-         
-            if (gameBoard != null && gameBoard.GetSize() == 400)
+        public IActionResult IndexMedium(int? id) {
+            if (id == null)
                 return View(gameBoard);
+
+            if ((gameBoard != null && gameBoard.GetSize() == 400) && (levelOfDificulty == id) && levelOfDificulty != null)
+                return View(gameBoard);
+
+           levelOfDificulty = id;
+            
             gameBoard = new GameBoard();
             gameBoard = new MediumSizeDecorator(gameBoard);
-            gameBoard = new MediumAmountOfBombsDecorator(gameBoard, gameBoard.Board);
+            if (id == 1)
+                gameBoard = new SmallAmountOfBombsDecorator(gameBoard, gameBoard.Board);
+            else if (id == 2)
+                gameBoard = new MediumAmountOfBombsDecorator(gameBoard, gameBoard.Board);
             gameBoard.SetBombsToBoard();
             return View(gameBoard);
         }
@@ -34,11 +49,11 @@ namespace Saper.Controllers
                 TempData["Failed"] = "Spróbuj jeszcze raz!";
                 if (gameBoard.GetSize() == 100) {
                     gameBoard = null;
-                    return RedirectToAction("IndexSmall");
+                    return RedirectToAction("IndexSmall",new { id = levelOfDificulty});
                 }
                 else if (gameBoard.GetSize() == 400) {
                     gameBoard = null;
-                    return RedirectToAction("IndexMedium");
+                    return RedirectToAction("IndexMedium", new { id = levelOfDificulty });
                 }
             }
             else if (gameBoard.Board[x, y] == 0) {
@@ -50,10 +65,10 @@ namespace Saper.Controllers
             gameBoard.ClickedXY()[x,y] = 1; // One - Clicked
 
             if (gameBoard.GetSize() == 100) 
-                return RedirectToAction("IndexSmall");
+                return RedirectToAction("IndexSmall", new { id = levelOfDificulty });
             
             else if (gameBoard.GetSize() == 400)               
-                return RedirectToAction("IndexMedium");
+                return RedirectToAction("IndexMedium", new { id = levelOfDificulty });
             
             return View();
         }
