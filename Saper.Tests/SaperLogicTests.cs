@@ -20,22 +20,36 @@ namespace Saper.Models.SaperLogic
             
         }
         [Fact]
-       public void ShouldCheckIfTablesAreAtRightSize() {
+       public void ShouldCheckIfTablesAreAtRightSizeSmalll() {
 
-            List<GameBoardDecorator> list = new List<GameBoardDecorator>()
-            {
-            new SmallSizeDecorator(_gameBoard),
-            new MediumSizeDecorator(_gameBoard),
-            //new LargeSizeDecorator(_gameBoard)
-            };
 
+
+            _gameBoard = new SmallSizeDecorator(_gameBoard);
+            Assert.Equal(_gameBoard.GetSize(), 100);
             
-            Assert.Equal((_gameBoard = list.ElementAt(0)).GetSize(), 100);
-            Assert.Equal((_gameBoard = list.ElementAt(1)).GetSize(), 400);
-            Assert.Equal((_gameBoard = list.ElementAt(1)).ClickedXY().Length, 400);
 
 
         }
-       
+        [Fact]
+        public void ShouldCheckIfTablesAreAtRightSizeMedium() {
+
+            _gameBoard = new MediumSizeDecorator(_gameBoard);
+            Assert.Equal(_gameBoard.GetSize(), 400);
+
+
+        }
+        [Fact]
+        public void NumberOfBombsShouldBeEqual() {
+
+            _gameBoard = new SmallSizeDecorator(_gameBoard);
+            _gameBoard = new SmallAmountOfBombsDecorator(_gameBoard,_gameBoard.Board);
+
+            Assert.Equal(_gameBoard.Bombs, 15);
+            _gameBoard = new MediumAmountOfBombsDecorator(_gameBoard, _gameBoard.Board);
+            Assert.Equal(_gameBoard.Bombs, 30);
+
+
+
+        }
     }
 }

@@ -5,11 +5,12 @@
         
 
         public abstract int[,] Board { get; set; }
-        public abstract int NumberOfBombs { get; set; }
+        
 
         public abstract int[,] xyClicks { get; set; }
-        
-        public abstract int GetBoardTile(int a, int b);
+        public abstract int Bombs { get; set; }
+        public abstract void setBombs();
+
 
         public abstract int GetSize();
         public abstract void SetBombsToBoard();

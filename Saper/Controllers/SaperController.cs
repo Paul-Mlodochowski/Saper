@@ -14,6 +14,7 @@ namespace Saper.Controllers
 
             gameBoard = new GameBoard();
             gameBoard = new SmallSizeDecorator(gameBoard);
+            gameBoard = new SmallAmountOfBombsDecorator(gameBoard,gameBoard.Board);
             gameBoard.SetBombsToBoard();
             return View(gameBoard);
         }
@@ -23,6 +24,7 @@ namespace Saper.Controllers
                 return View(gameBoard);
             gameBoard = new GameBoard();
             gameBoard = new MediumSizeDecorator(gameBoard);
+            gameBoard = new MediumAmountOfBombsDecorator(gameBoard, gameBoard.Board);
             gameBoard.SetBombsToBoard();
             return View(gameBoard);
         }

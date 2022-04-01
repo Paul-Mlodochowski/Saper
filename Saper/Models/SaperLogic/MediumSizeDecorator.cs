@@ -15,6 +15,7 @@
         public override void setSize() {
             base.setSize();
         }
+        
         public override void SetBombsToBoard() {
 
             base.SetBombsToBoard();

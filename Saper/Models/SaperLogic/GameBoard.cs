@@ -6,8 +6,8 @@ namespace Saper.Models.SaperLogic
     {
         // BOMBS are represents as -1
         public override int[,] Board { get; set; }
-        public override int NumberOfBombs { get; set; }
-
+        
+        public override int Bombs { get; set; }
 
         public override int[,] xyClicks { get; set; }
 
@@ -15,20 +15,22 @@ namespace Saper.Models.SaperLogic
         public override void setSize() {
             Board = new int[1,1];
         }
-        
+        public override void setBombs() {
+            Bombs = 0;
+        }
+
         public override int[,] ClickedXY() {
             return xyClicks;
         }
         
 
-        public override int GetBoardTile(int a, int b) {
-            return 0;
-        }
+       
 
         public override int GetSize() {
             return this.Board.Length;
         }
         public override void SetBombsToBoard() {
+
             if (Board == null)
                 throw new ArgumentNullException(nameof(Board));
             int counter = 0;
@@ -42,7 +44,7 @@ namespace Saper.Models.SaperLogic
                     Board[x, y] = -1;
                     counter++;
                 }
-            } while (counter <= 10);
+            } while (counter <= Bombs);
             SetClues();
 
         }

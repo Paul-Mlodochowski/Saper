@@ -2,8 +2,9 @@
 {
     public interface IGameBoard
     {
-        int GetBoardTile(int a,int b);
+        
         int GetSize();
+        int[,] ClickedXY();
 
     }
 }

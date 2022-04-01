@@ -9,8 +9,8 @@
 @if (TempData["Failed"] != null) {
 	<h2>@TempData["Failed"]</h2>
 }
-<p>Liczba bomb </p>
-<div class="SaperBoard small">
+<p>Liczba bomb @Model.Bombs</p>
+<div class="SaperBoard small" oncontextmenu="return false;">
     @for (int x =0; x < Math.Sqrt(Model.GetSize());x++)
     {
 		@for(int y =0; y < Math.Sqrt(Model.GetSize());y++){
@@ -20,7 +20,7 @@
 			</div>
 			}
 			else{
-			<div  class="Tile">
+			<div  class="Tiles">
 				<a asp-action="Check" asp-route-x="@x" asp-route-y="@y" class="Tile" >
 				
 				</a>
@@ -30,3 +30,4 @@
 	}
 
 </div>
+<script src="site.js"></script>
