@@ -31,11 +31,11 @@ namespace Saper.Models.SaperLogic
 
             
             Assert.Equal((_gameBoard = list.ElementAt(0)).GetSize(), 100);
-            _gameBoard.SetBombsToBoard();
             Assert.Equal((_gameBoard = list.ElementAt(1)).GetSize(), 400);
-           
-           
+            Assert.Equal((_gameBoard = list.ElementAt(1)).ClickedXY().Length, 400);
+
 
         }
+       
     }
 }

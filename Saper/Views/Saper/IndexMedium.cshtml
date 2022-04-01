@@ -1,0 +1,32 @@
+﻿@using Saper.Models.SaperLogic
+@model AbstractGameBoard
+@{
+    ViewData["Title"] = "Zagraj w sapera!";
+
+}
+
+<h1>Saper Plansza Medium</h1>
+@if (TempData["Failed"] != null) {
+	<h2>@TempData["Failed"]</h2>
+}
+<p>Liczba bomb </p>
+<div class="SaperBoard medium">
+    @for (int x =0; x < Math.Sqrt(Model.GetSize());x++)
+    {
+		@for(int y =0; y < Math.Sqrt(Model.GetSize());y++){
+			@if(@Model.ClickedXY()[x,y] == 1) {
+			<div  class="ShowTitle">
+				@Model.Board[x,y]
+			</div>
+			}
+			else{
+			<div  class="Tile">
+				<a asp-action="Check" asp-route-x="@x" asp-route-y="@y" class="Tile" >
+				
+				</a>
+			</div>
+			}
+		}
+	}
+
+</div>

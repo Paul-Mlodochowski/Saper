@@ -17,18 +17,22 @@ body {
   margin-bottom: 60px;
 }
 .SaperBoard {
-    width: 300px;
+    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap
 }
+.small {
+    width: 300px;
+}
+.medium{
+    width:600px;
+}
 .ShowTitle {
     position: relative;
-    
     width: 30px;
     height: 30px;
-    text-align:center;
- 
+    text-align: center;
 }
 .Tile {
     position: relative;

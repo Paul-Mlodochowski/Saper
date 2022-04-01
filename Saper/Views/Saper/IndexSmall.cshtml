@@ -7,9 +7,10 @@
 
 <h1>Saper Plansza Small</h1>
 @if (TempData["Failed"] != null) {
-	<h2 color = "red">@TempData["Failed"]</h2>
+	<h2>@TempData["Failed"]</h2>
 }
-<div class="SaperBoard">
+<p>Liczba bomb </p>
+<div class="SaperBoard small">
     @for (int x =0; x < Math.Sqrt(Model.GetSize());x++)
     {
 		@for(int y =0; y < Math.Sqrt(Model.GetSize());y++){

@@ -6,8 +6,15 @@ namespace Saper.Models.SaperLogic
     {
         // BOMBS are represents as -1
         public override int[,] Board { get; set; }
-        private int[,] xyClicks = new int[10,10];
-        
+        public override int NumberOfBombs { get; set; }
+
+
+        public override int[,] xyClicks { get; set; }
+
+
+        public override void setSize() {
+            Board = new int[1,1];
+        }
         
         public override int[,] ClickedXY() {
             return xyClicks;
