@@ -6,9 +6,7 @@
 }
 
 <h1>Saper Plansza Small</h1>
-@if (TempData["Failed"] != null) {
-	<h2 class="redText">@TempData["Failed"]</h2>
-}
+<partial name="_NotificationOfFailure"/>
 <p>Liczba bomb @Model.Bombs</p>
 <div class="SaperBoard small" oncontextmenu="return false;">
     @for (int x =0; x < Math.Sqrt(Model.GetSize());x++)

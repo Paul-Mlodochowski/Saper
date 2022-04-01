@@ -75,8 +75,8 @@ namespace Saper.Controllers
         private static bool? Seeking(int[,] Tab, int[,] Clicks, int axis, int x, int y) {
             if ( x> axis || y > axis || y < 0 || x < 0)
                 return null;
-			if (Tab[x, y] != 0) {
-                Clicks[x, y] = 1;
+			if (Tab[x, y] != (int)Tile.DiffrentThan0) {
+                Clicks[x, y] = (int)Tile.Checked;
                 return null;
             }
 
@@ -85,7 +85,7 @@ namespace Saper.Controllers
             Seeking(Tab, Clicks, axis, x, y + 1);
 
             Seeking(Tab, Clicks, axis, x + 1, y + 1);
-               Clicks[x,y] = 1;
+               Clicks[x,y] = (int)Tile.Checked;
 
      
 
@@ -95,8 +95,8 @@ namespace Saper.Controllers
             if (x > axis || y > axis || y < 0 || x < 0)
                 return null;
 
-            if (Tab[x, y] != 0) {
-                Clicks[x, y] = 1;
+            if (Tab[x, y] != (int)Tile.DiffrentThan0) {
+                Clicks[x, y] = (int)Tile.Checked;
                 return null;
             }
             SeekingMinus(Tab, Clicks, axis, x, y - 1);
@@ -106,7 +106,7 @@ namespace Saper.Controllers
 
 
             SeekingMinus(Tab, Clicks, axis, x - 1, y - 1);
-            Clicks[x, y] = 1;
+            Clicks[x, y] = (int)Tile.Checked;
 
 
             return null;
